@@ -7,7 +7,7 @@ const app: Express = express();
 const port = process.env.PORT;
 
 app.get('/', (req: Request, res: Response) => {
-    res.send('Express + TypeScript Server ' + new Date());
+    res.send('Express + TypeScript Server 10 ' + new Date());
 });
 
 app.listen(port, () => {
