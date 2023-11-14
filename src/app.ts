@@ -32,7 +32,13 @@ class App {
             MONGO_PASSWORD,
             MONGO_PATH,
         } = process.env;
-        mongoose.connect(`mongodb://127.0.0.1:27017/shivamhomeo_db`);
+        // mongoose.connect(`mongodb://127.0.0.1:27017/shivamhomeo_db`);
+        mongoose.connect("mongodb://" + process.env.COSMOSDB_HOST + ":" + process.env.COSMOSDB_PORT + "/" + process.env.COSMOSDB_DBNAME + "?ssl=true&replicaSet=globaldb", {
+            auth: {
+                username: process.env.COSMOSDB_USER,
+                password: process.env.COSMOSDB_PASSWORD
+            }
+        })
     }
 
 
