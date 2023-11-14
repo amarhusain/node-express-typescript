@@ -7,7 +7,7 @@ class PostController {
 
     private posts: Post[] = [
         {
-            author: 'Marcin',
+            author: 'Marcine',
             content: 'Dolor sit amet',
             title: 'Lorem Ipsum',
         }
