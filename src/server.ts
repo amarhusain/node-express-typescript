@@ -1,15 +1,20 @@
-import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
+import App from './app';
+import PostController from './controllers/post.controller';
+import DistrictController from './controllers/district.controller';
+import { districtService } from './services/district.service';
 
 dotenv.config();
 
-const app: Express = express();
-const port = process.env.PORT;
+// const app: Express = express();
+const port = Number(process.env.PORT);
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Express + TypeScript Server 10 10 10 ' + new Date());
-});
+const app = new App(
+    [
+        new PostController(),
+        new DistrictController(districtService, 7464646)
+    ],
+    port,
+);
 
-app.listen(port, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
-});
+app.listen();
