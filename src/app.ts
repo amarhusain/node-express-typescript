@@ -11,6 +11,7 @@ class App {
         this.port = port;
 
         this.initializeMiddlewares();
+        this.connectToTheDatabase();
         this.initializeControllers(controllers);
     }
 
