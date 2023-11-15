@@ -33,7 +33,7 @@ class App {
             MONGO_PATH,
         } = process.env;
         // mongoose.connect(`mongodb://127.0.0.1:27017/shivamhomeo_db`);
-        let connStr = process.env.AZURE_COSMOS_CONNECTIONSTRING || 'NA';
+        let connStr = process.env.AZURE_COSMOS_CONNECTIONSTRING || 'N/A';
         mongoose.connect(connStr);
     }
 
