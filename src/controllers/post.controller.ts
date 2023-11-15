@@ -10,7 +10,7 @@ class PostController {
             author: 'Marcine',
             content: 'Dolor sit amet',
             title: 'Lorem Ipsum',
-            connStr: process.env.AZURE_COSMOS_CONNECTIONSTRING || 'NA'
+            connStr: 'NA'
         }
     ];
 
