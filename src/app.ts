@@ -25,6 +25,15 @@ class App {
     }
 
 
+    private connectToTheDatabase() {
+        const {
+            MONGO_USER,
+            MONGO_PASSWORD,
+            MONGO_PATH,
+        } = process.env;
+        // mongoose.connect(`mongodb://127.0.0.1:27017/shivamhomeo_db`);
+        mongoose.connect("mongodb://" + process.env.COSMOSDB_USER + ":" + process.env.COSMOSDB_PASSWORD + "@" + process.env.COSMOSDB_HOST + ":" + process.env.COSMOSDB_PORT + "/" + process.env.COSMOSDB_DBNAME + "?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@shivamhtest-server@");
+    }
 
 
     public listen() {
