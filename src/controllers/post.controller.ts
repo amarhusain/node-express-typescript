@@ -9,7 +9,7 @@ class PostController {
         {
             author: 'Marcine',
             content: 'Dolor sit amet',
-            title: 'Lorem Ipsum',
+            title: 'Lorem Ipsum 2',
             connStr: 'NA'
         }
     ];
