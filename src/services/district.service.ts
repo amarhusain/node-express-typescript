@@ -9,12 +9,12 @@ export class DistrictService {
     }
 
     async createDistrict(createDistrictDto: CreateDistrictDto) {
-        await districtRepository.createDistrict(createDistrictDto);
+        return await this.districtRepository.createDistrict(createDistrictDto);
     }
 
     async getAllDistrict() {
 
-        await districtRepository.getAllDistrict();
+        return await this.districtRepository.getAllDistrict();
 
     }
 

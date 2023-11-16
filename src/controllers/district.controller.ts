@@ -17,12 +17,12 @@ class DistrictController {
     }
     async createDistrict(req: Request, response: Response, next: NextFunction) {
         const { _id, name, stateId } = req.body;
-        const result = await districtService.createDistrict({ _id, name, stateId });
+        const result = await this.districtService.createDistrict({ _id, name, stateId });
         response.send(result);
     }
 
     async getAllDistrict(req: Request, response: Response, next: NextFunction) {
-        const result = await districtService.getAllDistrict();
+        const result = await this.districtService.getAllDistrict();
         response.send(result);
     }
 

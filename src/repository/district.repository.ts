@@ -8,7 +8,7 @@ export class DistrictRepository {
 
     async createDistrict(createDistrictDto: CreateDistrictDto) {
         const district = new this.districtModel(createDistrictDto);
-        return district.save();
+        return await district.save();
     }
 
     async getAllDistrict() {
