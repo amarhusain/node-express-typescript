@@ -1,11 +1,14 @@
-import express, { NextFunction, Request, Response } from "express";
+import express, { NextFunction, Request, Response, response } from "express";
 import { DistrictService, districtService } from "../services/district.service";
+import Post from "../interfaces/post.interface";
 
 
 class DistrictController {
 
     public path = '/dist';
     public router = express.Router();
+
+
 
     constructor(private districtService: DistrictService, private mobile: number) {
         this.intializeRoutes();
@@ -14,6 +17,7 @@ class DistrictController {
     public intializeRoutes() {
         this.router.get(this.path, this.getAllDistrict);
         this.router.post(this.path, this.createDistrict);
+        this.router.post(this.path + "/a", this.getSampleDistrict);
     }
     async createDistrict(req: Request, response: Response, next: NextFunction) {
         const { _id, name, stateId } = req.body;
@@ -24,6 +28,11 @@ class DistrictController {
     async getAllDistrict(req: Request, response: Response, next: NextFunction) {
         const result = await this.districtService.getAllDistrict();
         response.send(result);
+    }
+
+    async getSampleDistrict() {
+        const res = await this.districtService.getSampleDistrict();
+        response.send(res);
     }
 
 }

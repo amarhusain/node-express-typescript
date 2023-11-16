@@ -18,6 +18,10 @@ export class DistrictService {
 
     }
 
+    async getSampleDistrict() {
+        return await this.districtRepository.getSampleDistrict();
+    }
+
 }
 
 
