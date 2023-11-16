@@ -15,9 +15,7 @@ class DistrictController {
     }
 
     public intializeRoutes() {
-        this.router.get(this.path, this.getAllDistrict);
-        this.router.post(this.path, this.createDistrict);
-        this.router.get(this.path + "/a", this.getSampleDistrict);
+        this.router.get(this.path, this.getSampleDistrict);
     }
     async createDistrict(req: Request, response: Response, next: NextFunction) {
         const { _id, name, stateId } = req.body;
